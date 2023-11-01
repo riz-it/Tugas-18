@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Tugas 18</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta content="Tugas 18" name="description" />
+    <meta content="" name="author" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="upgrade-insecure-requests"
+    />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
+    />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="upgrade-insecure-requests"
+    />
+
+    <!-- App favicon -->
+    <link
+      rel="shortcut icon"
+      href="https://img.freepik.com/premium-vector/house-real-estate-logo_7169-95.jpg"
+    />
+
+    <!-- DataTables -->
+    <link
+      href="assets/plugins/datatables/dataTables.bootstrap5.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="assets/plugins/datatables/buttons.bootstrap5.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <!-- Responsive datatable examples -->
+    <link
+      href="assets/plugins/datatables/responsive.bootstrap4.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <!-- Sweet Alert -->
+    <link
+      href="assets/plugins/sweet-alert2/sweetalert2.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="assets/plugins/animate/animate.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <!-- App css -->
+    <link
+      href="assets/css/bootstrap.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    <link
+      href="assets/css/metisMenu.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link href="assets/css/app.min.css" rel="stylesheet" type="text/css" />
+  </head>
+
+  <body class="">
+    <!-- Left Sidenav -->
+    <div class="left-sidenav">
+      <!-- LOGO -->
+      <div class="brand">
+        <a href="index.html" class="logo">
+          <span>
+            <img
+              style="width: 60px; height: 65px"
+              src="https://img.freepik.com/premium-vector/house-real-estate-logo_7169-95.jpg"
+              alt="logo-small"
+              class="logo-sm"
+            />
+          </span>
+        </a>
+      </div>
+      <!--end logo-->
+      <div class="menu-content h-100" data-simplebar>
+        <ul class="metismenu left-sidenav-menu">
+          <li class="menu-label mt-0">Menu</li>
+
+          <li>
+            <a href="javascript: void(0);">
+              <i data-feather="layers" class="align-self-center menu-icon"></i
+              ><span>Transaksi</span
+              ><span class="menu-arrow"
+                ><i class="mdi mdi-chevron-right"></i></span
+            ></a>
+            <ul class="nav-second-level" aria-expanded="false">
+              <li class="nav-item">
+                <a class="nav-link" href=""
+                  ><i class="ti-control-record"></i>Mutasi</a
+                >
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- end left-sidenav-->
+
+    <div class="page-wrapper">
+      <!-- Top Bar Start -->
+      <div class="topbar">
+        <!-- Navbar -->
+        <nav class="navbar-custom">
+          <!--end topbar-nav-->
+
+          <ul class="list-unstyled topbar-nav mb-0">
+            <li>
+              <button class="nav-link button-menu-mobile">
+                <i
+                  data-feather="menu"
+                  class="align-self-center topbar-icon"
+                ></i>
+              </button>
+            </li>
+          </ul>
+        </nav>
+        <!-- end navbar-->
+      </div>
+      <!-- Top Bar End -->
+
+      <!-- Page Content-->
+      <div class="page-content">
+        <div class="container-fluid">
+          <!-- Page-Title -->
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="page-title-box">
+                <div class="row">
+                  <div class="col">
+                    <h4 class="page-title">Tugas 18</h4>
+                    <ol class="breadcrumb">
+                      <li class="breadcrumb-item">
+                        <a href="javascript:void(0);">Transaksi</a>
+                      </li>
+                      <li class="breadcrumb-item">
+                        <a href="javascript:void(0);">Mutasi</a>
+                      </li>
+                    </ol>
+                  </div>
+                  <!--end col-->
+                  <div class="col-auto align-self-center">
+                    <button class="btn btn-sm btn-outline-primary">
+                      Hari ini :
+                      <script>
+                        var options = {
+                          timeZone: "Asia/Jakarta",
+                          year: "numeric",
+                          month: "numeric",
+                          day: "numeric",
+                        };
+                        var dateTimeFormat = new Intl.DateTimeFormat(
+                          "id-ID",
+                          options
+                        );
+                        var [
+                          { value: day },
+                          ,
+                          { value: month },
+                          ,
+                          { value: year },
+                        ] = dateTimeFormat.formatToParts(new Date());
+                        document.write(day + "/" + month + "/" + year);
+                      </script>
+                    </button>
+                  </div>
+
+                  <!--end col-->
+                </div>
+                <!--end row-->
+              </div>
+              <!--end page-title-box-->
+            </div>
+            <!--end col-->
+          </div>
+          <!--end row-->
+          <!-- end page title end breadcrumb -->
+          <hr class="mb-3 mt-0" />
+
+          <div class="row">
+            <div class="col-lg-12">
+              <!--end row-->
+              <div class="row">
+                <div class="col">
+                  <div class="card">
+                    <div class="card-body">
+                      <div class="row mb-2">
+                        <div class="col-lg-2">
+                          <button
+                            type="button"
+                            data-bs-toggle="modal"
+                            data-bs-target="#modalProduk"
+                            class="btn form-control btn-outline-primary"
+                          >
+                            <i class="mdi mdi-cube me-2"></i>Pilih Produk
+                          </button>
+                        </div>
+                        <div class="col-lg-2">
+                          <input
+                            class="form-control"
+                            readonly
+                            type="text"
+                            placeholder="Kode Produk"
+                            id="form-kode-produk"
+                          />
+                        </div>
+                        <div class="col-lg-6">
+                          <input
+                            class="form-control"
+                            readonly
+                            type="text"
+                            placeholder="Nama Produk"
+                            id="form-nama-produk"
+                          />
+                        </div>
+                        <div class="col-lg-2">
+                          <div class="input-group">
+                            <span class="input-group-text" id="qty">Qty</span>
+                            <input
+                              type="number"
+                              class="form-control"
+                              placeholder="1"
+                              aria-label="1"
+                              aria-describedby="qty"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                      <hr />
+                      <div class="row">
+                        <div class="col-lg-2">
+                          <button
+                            id="pilih-bahan"
+                            type="button"
+                            class="btn form-control btn-outline-primary"
+                          >
+                            <i class="mdi mdi-book-outline me-2"></i>Pilih Bahan
+                          </button>
+                        </div>
+                        <div class="col-lg-2">
+                          <input
+                            class="form-control"
+                            readonly
+                            type="text"
+                            placeholder="Kode"
+                            id="form-kode-bahan"
+                          />
+                        </div>
+                        <div class="col-lg-4">
+                          <input
+                            class="form-control"
+                            readonly
+                            type="text"
+                            placeholder="Nama Bahan"
+                            id="form-nama-bahan"
+                          />
+                        </div>
+                        <div class="col-lg-2">
+                          <div class="input-group">
+                            <span class="input-group-text" id="stok">Stok</span>
+                            <input
+                              readonly
+                              type="number"
+                              id="form-stock-bahan"
+                              class="form-control"
+                              placeholder="0"
+                              aria-label="0"
+                              aria-describedby="form-qty-bahan"
+                            />
+                          </div>
+                        </div>
+                        <div class="col-lg-2">
+                          <button
+                            id="to-cart"
+                            type="button"
+                            class="btn form-control btn-outline-primary"
+                          >
+                            <i class="mdi mdi-cart-arrow-right me-2"></i>
+                            Tambahkan
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!--end card-->
+
+              <div class="row">
+                <div class="col">
+                  <div class="card">
+                    <div class="card-header">
+                      <h6>Daftar Bahan</h6>
+                    </div>
+                    <div class="card-body">
+                      <div class="table-responsive">
+                        <table
+                          id="tabel-list-bahan"
+                          class="table mb-0 table-centered"
+                        >
+                          <thead>
+                            <tr>
+                              <th style="width: 10%">#</th>
+                              <th style="width: 30%">Kode Bahan</th>
+                              <th style="width: 35%">Bahan</th>
+                              <th style="width: 10%">Qty</th>
+                              <th style="width: 15%" class="text-right">
+                                Action
+                              </th>
+                            </tr>
+                          </thead>
+                          <tbody></tbody>
+                        </table>
+                      </div>
+                    </div>
+                    <div class="card-footer">
+                      <div class="row">
+                        <div class="col">
+                          <div class="float-end">
+                            <button id="cetak-transaksi"
+                              type="button"
+                              class="btn btn-outline-primary"
+                            >
+                              <i class="mdi mdi-send me-2"></i>Cetak
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--end col-->
+          </div>
+          <!--end row-->
+
+          <!--end row-->
+        </div>
+        <!-- container -->
+
+        <footer class="footer text-center text-sm-start">
+          &copy;
+          <script>
+            document.write(new Date().getFullYear());
+          </script>
+          Tugas 18
+        </footer>
+        <!--end footer-->
+      </div>
+      <!-- end page content -->
+    </div>
+
+    <!-- Modal -->
+    <div
+      class="modal fade bd-example-modal-lg"
+      id="modalProduk"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="myLargeModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h6 class="modal-title m-0" id="myLargeModalLabel">Pilih Produk</h6>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <!--end modal-header-->
+          <div class="modal-body">
+            <table
+              id="tabel-produk"
+              class="table table-bordered dt-responsive nowrap"
+              style="border-collapse: collapse; border-spacing: 0; width: 100%"
+            >
+              <thead>
+                <tr>
+                  <th>Kode Produk</th>
+                  <th>Nama Produk</th>
+                  <th class="text-center">Opsi</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <tr>
+                  <td>MK-0010</td>
+                  <td>Burger</td>
+                  <td class="text-center">
+                    <button
+                      type="button"
+                      class="btn checklist btn-outline-primary btn-icon-circle btn-icon-circle-sm"
+                    >
+                      <i class="fas fa-check"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>MK-0011</td>
+                  <td>Pizza</td>
+                  <td class="text-center">
+                    <button
+                      type="button"
+                      class="btn checklist btn-outline-primary btn-icon-circle btn-icon-circle-sm"
+                    >
+                      <i class="fas fa-check"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>MK-0012</td>
+                  <td>Salad</td>
+                  <td class="text-center">
+                    <button
+                      type="button"
+                      class="btn checklist btn-outline-primary btn-icon-circle btn-icon-circle-sm"
+                    >
+                      <i class="fas fa-check"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>MK-0013</td>
+                  <td>Sushi</td>
+                  <td class="text-center">
+                    <button
+                      type="button"
+                      class="btn checklist btn-outline-primary btn-icon-circle btn-icon-circle-sm"
+                    >
+                      <i class="fas fa-check"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>MK-0014</td>
+                  <td>Pasta</td>
+                  <td class="text-center">
+                    <button
+                      type="button"
+                      class="btn checklist btn-outline-primary btn-icon-circle btn-icon-circle-sm"
+                    >
+                      <i class="fas fa-check"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>MK-0015</td>
+                  <td>Wilson</td>
+                  <td class="text-center">
+                    <button
+                      type="button"
+                      class="btn checklist btn-outline-primary btn-icon-circle btn-icon-circle-sm"
+                    >
+                      <i class="fas fa-check"></i>
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <!--end modal-body-->
+        </div>
+        <!--end modal-content-->
+      </div>
+      <!--end modal-dialog-->
+    </div>
+
+    <div
+      class="modal fade bd-example-modal-lg"
+      id="modalBahan"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="myLargeModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h6 class="modal-title m-0" id="myLargeModalLabel">Pilih Bahan</h6>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <!--end modal-header-->
+          <div class="modal-body">
+            <table
+              id="tabel-bahan"
+              class="table table-bordered dt-responsive nowrap"
+              style="border-collapse: collapse; border-spacing: 0; width: 100%"
+            >
+              <thead>
+                <tr>
+                  <th>Kode Bahan</th>
+                  <th>Nama Bahan</th>
+                  <th>Stok Bahan</th>
+                  <th class="text-center">Opsi</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <tr>
+                  <td>BK-0010</td>
+                  <td>Sawi</td>
+                  <td>5</td>
+                  <td class="text-center">
+                    <button
+                      type="button"
+                      class="btn checklist btn-outline-primary btn-icon-circle btn-icon-circle-sm"
+                    >
+                      <i class="fas fa-check"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>BK-0011</td>
+                  <td>Daging</td>
+                  <td>5</td>
+                  <td class="text-center">
+                    <button
+                      type="button"
+                      class="btn checklist btn-outline-primary btn-icon-circle btn-icon-circle-sm"
+                    >
+                      <i class="fas fa-check"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>BK-0012</td>
+                  <td>Jagung</td>
+                  <td>5</td>
+                  <td class="text-center">
+                    <button
+                      type="button"
+                      class="btn checklist btn-outline-primary btn-icon-circle btn-icon-circle-sm"
+                    >
+                      <i class="fas fa-check"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>BK-0013</td>
+                  <td>Saos</td>
+                  <td>5</td>
+                  <td class="text-center">
+                    <button
+                      type="button"
+                      class="btn checklist btn-outline-primary btn-icon-circle btn-icon-circle-sm"
+                    >
+                      <i class="fas fa-check"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>BK-0014</td>
+                  <td>Roti</td>
+                  <td>5</td>
+                  <td class="text-center">
+                    <button
+                      type="button"
+                      class="btn checklist btn-outline-primary btn-icon-circle btn-icon-circle-sm"
+                    >
+                      <i class="fas fa-check"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>BK-0015</td>
+                  <td>Wijen</td>
+                  <td>5</td>
+                  <td class="text-center">
+                    <button
+                      type="button"
+                      class="btn checklist btn-outline-primary btn-icon-circle btn-icon-circle-sm"
+                    >
+                      <i class="fas fa-check"></i>
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <!--end modal-body-->
+        </div>
+        <!--end modal-content-->
+      </div>
+      <!--end modal-dialog-->
+    </div>
+    <!--end modal-->
+
+    <!-- jQuery  -->
+
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/metismenu.min.js"></script>
+    <script src="assets/js/moment.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+    <!-- App js -->
+    <script src="assets/js/app.js"></script>
+
+    <!-- Required datatable js -->
+    <script src="assets/plugins/datatables/jquery.dataTables.min.js"></script>
+    <script src="assets/plugins/datatables/dataTables.bootstrap5.min.js"></script>
+
+    <!-- Responsive examples -->
+    <script src="assets/plugins/datatables/dataTables.responsive.min.js"></script>
+    <script src="assets/plugins/datatables/responsive.bootstrap4.min.js"></script>
+
+    <!-- Sweet-Alert  -->
+    <script src="assets/plugins/sweet-alert2/sweetalert2.min.js"></script>
+
+    <!-- My Javascript -->
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
