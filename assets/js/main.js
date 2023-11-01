@@ -167,6 +167,8 @@ $(document).ready(function () {
       bahan: listBahan
     }
 
+    $('#bd-example-modal-xl').modal('show');
+
    
   });
 });
