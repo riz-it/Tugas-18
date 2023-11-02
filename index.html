@@ -233,11 +233,13 @@
                         </div>
                         <div class="col-lg-2">
                           <div class="input-group">
-                            <span class="input-group-text" id="qty-produks">Qty</span>
+                            <span class="input-group-text">Qty</span>
                             <input
                               type="number"
+                              id="qty-produks"
                               class="form-control"
                               placeholder="1"
+                              value="1"
                               aria-label="1"
                               aria-describedby="qty"
                             />
@@ -340,7 +342,7 @@
                               type="button"
                               class="btn btn-outline-primary"
                             >
-                              <i class="mdi mdi-send me-2"></i>Cetak
+                              <i class="mdi mdi-printer-settings me-2"></i>Cetak
                             </button>
                           </div>
                         </div>
@@ -405,9 +407,7 @@
                 </tr>
               </thead>
 
-              <tbody>
-                
-              </tbody>
+              <tbody></tbody>
             </table>
           </div>
           <!--end modal-body-->
@@ -452,9 +452,7 @@
                 </tr>
               </thead>
 
-              <tbody>
-                
-              </tbody>
+              <tbody></tbody>
             </table>
           </div>
           <!--end modal-body-->
@@ -465,14 +463,14 @@
     </div>
 
     <div
-      class="modal fade bd-example-modal-xl"
+      class="modal fade bd-example-modal-lg"
       id="bd-example-modal-xl"
       tabindex="-1"
       role="dialog"
       aria-labelledby="myExtraLargeModalLabel"
       aria-hidden="true"
     >
-      <div class="modal-dialog modal-xl" role="document">
+      <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
           <div class="modal-header">
             <h6 class="modal-title m-0" id="myExtraLargeModalLabel">
@@ -489,20 +487,45 @@
           <div class="modal-body">
             <div class="row">
               <div class="col">
-                <div class="mb-3">
-                  <label class="form-label" for="kode">Kode</label>
-                  <input type="text" class="form-control" id="kode-akhir" readonly>
+                <div class="form-floating mb-3">
+                  <input
+                    type="text"
+                    readonly
+                    class="form-control"
+                    id="kode-akhir"
+                    placeholder=""
+                  />
+                  <label for="kode-akhir">Kode Produk</label>
+                </div>
               </div>
-              <div class="mb-3">
-                <label class="form-label" for="nama">Nama Produk</label>
-                <input type="text" readonly class="form-control" id="nama-akhir" >
-            </div>
-            <div class="mb-3">
-              <label class="form-label" for="qty">Qty</label>
-              <input type="text" class="form-control" id="qty-akhir" readonly>
-          </div>
+              <div class="col">
+                <div class="form-floating mb-3">
+                  <input
+                    type="text"
+                    readonly
+                    class="form-control"
+                    id="nama-akhir"
+                    placeholder=""
+                  />
+                  <label for="nama-akhir">Nama Produk</label>
+                </div>
               </div>
             </div>
+            <div class="row">
+              <div class="col">
+                <div class="form-floating mb-3">
+                  <input
+                    type="text"
+                    readonly
+                    class="form-control"
+                    id="qty-akhir"
+                    placeholder=""
+                  />
+                  <label for="kode-akhir">Kuantitas</label>
+                </div>
+              </div>
+            </div>
+            <hr style="border-top: 1px dashed #c5d0e0" />
             <table
               id="tabel-cetak"
               class="table table-bordered dt-responsive nowrap"
@@ -516,14 +539,11 @@
                 </tr>
               </thead>
 
-              <tbody>
-                
-              </tbody>
+              <tbody></tbody>
             </table>
           </div>
           <!--end modal-body-->
           <div class="modal-footer">
-           
             <button
               type="button"
               class="btn btn-soft-secondary btn-sm"

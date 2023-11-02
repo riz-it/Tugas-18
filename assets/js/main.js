@@ -121,14 +121,6 @@ function validateStock(input) {
     input.value = 1;
   }
 
-  // bahan = bahan.map(function (obj) {
-  //   if (obj.kode === input.getAttribute("data-kode")) {
-  //     alert("Asd")
-  //     // obj.qty = input.value;
-  //   }
-  //   // return obj;
-  // });
-
   bahan.map(function(item) {
     var kodeProduk = item[0];
 
@@ -316,7 +308,6 @@ $(document).ready(function () {
     $('#kode-akhir').val($("#form-kode-produk").val());
     $('#nama-akhir').val($("#form-nama-produk").val());
     $('#qty-akhir').val($("#qty-produks").val());
-
 
     $("#bd-example-modal-xl").modal("show");
   });
