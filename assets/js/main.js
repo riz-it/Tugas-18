@@ -20,7 +20,7 @@ var listProduk = [
   ["S018", "Shawarma"],
   ["C019", "Curry"],
   ["SR020", "Sushi Roll"],
-  ['P021', 'Wilson'],
+  ["P021", "Wilson"],
 ];
 var listBahan = [
   ["P001", "Tepung", 50],
@@ -100,7 +100,7 @@ function hapus(button) {
 
   for (let i = bahan.length - 1; i >= 0; i--) {
     if (bahan[i][0] === row.cells[1].innerHTML) {
-      bahan.splice(i, 1); 
+      bahan.splice(i, 1);
     }
   }
 
@@ -115,6 +115,11 @@ function hapus(button) {
 }
 
 function validateStock(input) {
+  var v = input.value,
+  vc = v.replace(/[^0-9]/, "");
+vc = v.replace(/[^0-9,]/, "");
+if (v == 0) [input.value = 1];
+if (v !== vc) [input.value = vc];
   var stock = parseInt(input.getAttribute("data-stock"));
   var qty = parseInt(input.value);
   if (qty > stock) {
@@ -129,14 +134,13 @@ function validateStock(input) {
     input.value = 1;
   }
 
-  bahan.map(function(item) {
+  bahan.map(function (item) {
     var kodeProduk = item[0];
 
     if (kodeProduk == input.getAttribute("data-kode")) {
       item[2] = input.value;
     }
-
-});
+  });
 }
 
 function validateCart(bahan) {
@@ -173,30 +177,43 @@ $(document).ready(function () {
 
   let dataProduk = [];
   listProduk.forEach((item) => {
-    dataProduk.push([item[0], item[1],
+    dataProduk.push([
+      item[0],
+      item[1],
       `<div class="text-center"><button
       type="button"
       class="btn mx-auto checklist btn-outline-primary btn-icon-circle btn-icon-circle-sm"
     >
       <i class="fas fa-check"></i>
-    </button></div>`]);
-   
+    </button></div>`,
+    ]);
   });
   dataTableProduk.clear().rows.add(dataProduk).draw();
 
   let dataBahan = [];
   listBahan.forEach((item) => {
-    dataBahan.push([item[0], item[1], item[2],
+    dataBahan.push([
+      item[0],
+      item[1],
+      item[2],
       `<div class="text-center"><button
       type="button"
       class="btn checklist btn-outline-primary btn-icon-circle btn-icon-circle-sm"
     >
       <i class="fas fa-check"></i>
-    </button></div>`]);
-   
+    </button></div>`,
+    ]);
   });
   dataTableBahan.clear().rows.add(dataBahan).draw();
 
+  $(".validateQty").on("input", function () {
+    
+    var v = $(this).val(),
+      vc = v.replace(/[^0-9]/, "");
+    vc = v.replace(/[^0-9,]/, "");
+    if (v == 0) [$(this).val(1)];
+    if (v !== vc) [$(this).val(vc)];
+  });
 
   dataTableCetak = $("#tabel-cetak").DataTable({});
 
@@ -235,7 +252,9 @@ $(document).ready(function () {
     cell2.innerHTML = $("#form-kode-bahan").val();
     cell3.innerHTML = $("#form-nama-bahan").val();
     cell4.innerHTML =
-      '<input class="form-control" data-kode="'+$("#form-kode-bahan").val()+'" onkeyup="validateStock(this)" type="number" data-stock="' +
+      '<input class="form-control" data-kode="' +
+      $("#form-kode-bahan").val() +
+      '" oninput="validateStock(this)" type="text" data-stock="' +
       $("#form-stock-bahan").val() +
       '" value="1" id="qty-' +
       nomorUrut +
@@ -302,6 +321,16 @@ $(document).ready(function () {
       });
       return;
     }
+    if (
+      $("#form-qty-produk").val() == ""
+    ) {
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Masukan kuantitas terlebih dahulu!",
+      });
+      return;
+    }
 
     if ($("#tabel-list-bahan tr").length == 1) {
       Swal.fire({
@@ -313,9 +342,9 @@ $(document).ready(function () {
     }
     dataTableCetak.clear().rows.add(bahan).draw();
 
-    $('#kode-akhir').val($("#form-kode-produk").val());
-    $('#nama-akhir').val($("#form-nama-produk").val());
-    $('#qty-akhir').val($("#qty-produks").val());
+    $("#kode-akhir").val($("#form-kode-produk").val());
+    $("#nama-akhir").val($("#form-nama-produk").val());
+    $("#qty-akhir").val($("#qty-produks").val());
 
     $("#bd-example-modal-xl").modal("show");
   });

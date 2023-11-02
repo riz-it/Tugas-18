@@ -203,7 +203,7 @@
                   <div class="card">
                     <div class="card-body">
                       <div class="row mb-2">
-                        <div class="col-lg-2">
+                        <div class="col-lg-2 mb-2">
                           <button
                             type="button"
                             data-bs-toggle="modal"
@@ -213,7 +213,7 @@
                             <i class="mdi mdi-cube me-2"></i>Pilih Produk
                           </button>
                         </div>
-                        <div class="col-lg-2">
+                        <div class="col-lg-2 mb-2">
                           <input
                             class="form-control"
                             readonly
@@ -222,7 +222,7 @@
                             id="form-kode-produk"
                           />
                         </div>
-                        <div class="col-lg-6">
+                        <div class="col-lg-6 mb-2">
                           <input
                             class="form-control"
                             readonly
@@ -231,13 +231,13 @@
                             id="form-nama-produk"
                           />
                         </div>
-                        <div class="col-lg-2">
+                        <div class="col-lg-2 mb-2">
                           <div class="input-group">
                             <span class="input-group-text">Qty</span>
                             <input
-                              type="number"
+                              type="text"
                               id="qty-produks"
-                              class="form-control"
+                              class="form-control validateQty"
                               placeholder="1"
                               value="1"
                               aria-label="1"
@@ -248,7 +248,7 @@
                       </div>
                       <hr />
                       <div class="row">
-                        <div class="col-lg-2">
+                        <div class="col-lg-2 mb-2">
                           <button
                             id="pilih-bahan"
                             type="button"
@@ -257,7 +257,7 @@
                             <i class="mdi mdi-book-outline me-2"></i>Pilih Bahan
                           </button>
                         </div>
-                        <div class="col-lg-2">
+                        <div class="col-lg-2 mb-2">
                           <input
                             class="form-control"
                             readonly
@@ -266,7 +266,7 @@
                             id="form-kode-bahan"
                           />
                         </div>
-                        <div class="col-lg-4">
+                        <div class="col-lg-4 mb-2">
                           <input
                             class="form-control"
                             readonly
@@ -275,21 +275,21 @@
                             id="form-nama-bahan"
                           />
                         </div>
-                        <div class="col-lg-2">
+                        <div class="col-lg-2 mb-2">
                           <div class="input-group">
                             <span class="input-group-text" id="stok">Stok</span>
                             <input
                               readonly
-                              type="number"
+                              type="text"
                               id="form-stock-bahan"
-                              class="form-control"
+                              class="form-control validateQty"
                               placeholder="0"
                               aria-label="0"
                               aria-describedby="form-qty-bahan"
                             />
                           </div>
                         </div>
-                        <div class="col-lg-2">
+                        <div class="col-lg-2 mb-2">
                           <button
                             id="to-cart"
                             type="button"
@@ -517,7 +517,7 @@
                   <input
                     type="text"
                     readonly
-                    class="form-control"
+                    class="form-control validateQty"
                     id="qty-akhir"
                     placeholder=""
                   />
