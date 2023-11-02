@@ -26,7 +26,6 @@ var listBahan = [
   ["P001", "Tepung", 50],
   ["P003", "Keju", 50],
   ["P004", "Tomat", 50],
-  ["B002", "Daging", 100],
   ["B004", "Roti", 100],
   ["B005", "Selada", 100],
   ["S003", "Nasi", 30],
@@ -78,7 +77,6 @@ var listBahan = [
   ["S018", "Daging Kebab", 50],
   ["S019", "Roti", 50],
   ["S020", "Saus", 50],
-  ["C019", "Daging", 70],
   ["C020", "Bumbu Curry", 70],
   ["C021", "Nasi", 70],
   ["SR020", "Nori", 40],
@@ -98,11 +96,21 @@ function closeModal(modal) {
 
 function hapus(button) {
   var row = button.parentNode.parentNode;
+  var nomorUrutHapus = parseInt(row.cells[0].innerHTML, 10);
 
-  bahan = bahan.filter(function (obj) {
-    return obj.kode !== row.cells[1].innerHTML;
-  });
+  for (let i = bahan.length - 1; i >= 0; i--) {
+    if (bahan[i][0] === row.cells[1].innerHTML) {
+      bahan.splice(i, 1); 
+    }
+  }
 
+  var rowBelow = row.parentNode.rows;
+  for (let i = nomorUrutHapus; i < rowBelow.length; i++) {
+    var nomorUrutBaru = parseInt(rowBelow[i].cells[0].innerHTML, 10) - 1;
+    rowBelow[i].cells[0].innerHTML = nomorUrutBaru;
+  }
+
+  nomorUrut--;
   row.parentNode.removeChild(row);
 }
 
